@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta datos  -->
+    <!-- Encriptación -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Titulo de la pagina WEB  -->
+    <title>EP4 - Unidad 4</title>
+    <!-- Nombre de los autores  -->
+    <meta name="author" content="Oscar Loyola | Sebastian Hernandez | Alfredo Mena" />
+    <!-- Es el Favi con icono dentro de la carpeta -->
+    <link rel="icon" href="/assets/huella.png" type="image/png" />
+    <!-- Conexion con el CSS creado-->
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="icon" href="/assets/huella.png" type="image/png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"
+/>
+
+</head>
+<body>
+    <main>
+        <header>
+            <!-- Es el titulo inical de la página  -->
+            <h1>Dinosaurios Mexicanos</h1>
+            <p>Son las ubicaciones donde se han encontrado los dinosaurios en México</p>
+            <nav>
+                <ul class="navbar">
+                    <ul class="nav-links">
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/geolocalizacion.html">Localización</a></li>
+                        <li><a href="/redSocial.html">Foro</a></li>
+                        <li><a href="/streaming.html">Streaming</a></li>
+                        <li><a href="/BD.html">Base de datos</a></li>
+                        <li><a href="/plataformaOnline.html">Plataforma Online</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </header>
+        <H3>Ubicaciones de los dinosaurios encontrados en México</H3>
+        <section id="localizacion">
+            <h2>Localización</h2>
+            <button onclick="obtenerUbicacion()">Obtener mi ubicación</button><br>
+            <p id="info-ubicacion">Ubicación no obtenida</p>
+            <p id="resultado"></p>
+            <div id="mapa"></div>
+        </section>
+    </main>
+</body>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="/js/mapa.js"></script>
+</html>

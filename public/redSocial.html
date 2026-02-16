@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta datos  -->
+    <!-- Encriptación -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Titulo de la pagina WEB  -->
+    <title>EP4 - Unidad 4</title>
+    <!-- Nombre de los autores  -->
+    <meta name="author" content="Oscar Loyola | Sebastian Hernandez | Alfredo Mena" />
+    <!-- Es el Favi con icono dentro de la carpeta -->
+    <link rel="icon" href="/assets/huella.png" type="image/png" />
+    <!-- Conexion con el CSS creado-->
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="icon" href="/assets/huella.png" type="image/png" />
+</head>
+<body>
+
+<header>
+  <h1>Dinosaurios Mexicanos</h1>
+  <p>Foro del proyecto</p>
+  <nav>
+        <ul class="navbar">
+            <ul class="nav-links">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/geolocalizacion.html">Localización</a></li>
+                <li><a href="/redSocial.html">Foro</a></li>
+                <li><a href="/streaming.html">Streaming</a></li>
+                <li><a href="/BD.html">Base de datos</a></li>
+                <li><a href="/plataformaOnline.html">Plataforma Online</a></li>
+            </ul>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+  <!-- LOGIN -->
+  <section>
+    <h2>Iniciar sesión</h2>
+    <input type="text" id="username" placeholder="Usuario">
+    <button onclick="login()">Login</button>
+    <div id="loginResult"></div>
+  </section>
+
+  <!-- CREAR POST -->
+  <section>
+    <h2>Crear publicación</h2>
+    <input type="text" id="postContent" placeholder="Escribe tu mensaje">
+    <button onclick="createPost()">Publicar</button>
+    <div id="postResult"></div>
+  </section>
+
+  <!-- POSTS -->
+  <section>
+    <h2>Publicaciones</h2>
+    <button onclick="getPosts()">Cargar publicaciones</button>
+    <div id="postsResult">No hay publicaciones cargadas.</div>
+  </section>
+
+</main>
+
+<script src="/js/redSocial.js"></script>
+
+
+</body>

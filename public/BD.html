@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ================= META DATOS ================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EP4 - Unidad 4</title>
+
+    <!-- Autores -->
+    <meta name="author" content="Oscar Loyola | Sebastian Hernandez | Alfredo Mena">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/huella.png" type="image/png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+<main>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <h1>Dinosaurios Mexicanos</h1>
+        <p>A continaicuon se presentaran los patrocinadores de este proyecto</p>
+        
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/geolocalizacion.html">Localización</a></li>
+                <li><a href="/redSocial.html">Foro</a></li>
+                <li><a href="/streaming.html">Streaming</a></li>
+                <li><a href="/BD.html">Base de datos</a></li>
+                <li><a href="/plataformaOnline.html">Plataforma Online</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= PATROCINADORES ================= -->
+    <section>
+        <h2>Lista de Patrocinadores</h2>
+
+        <!-- Botón para cargar datos desde la BD -->
+        <button onclick="cargarPatrocinadores()">Cargar patrocinadores</button>
+
+        <!-- Aquí se insertan los registros -->
+        <ul id="listaPatrocinadores"></ul>
+    </section>
+    <p>Si desea mas información sobre los patrocinadores, por favor contacte con nosotros.</p>
+    <!-- ================= FORMULARIO REGISTRO ================= -->
+    <section>
+        <h2>Solicita más información</h2>
+
+        <form id="formRegistro">
+            <input type="text" id="nombre" placeholder="Nombre completo" required>
+            <input type="email" id="correo" placeholder="Correo electrónico" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2024 Dinosaurios Mexicanos. Todos los derechos reservados.</p>
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+/* =====================================================
+   FUNCIÓN: Cargar patrocinadores desde la BD
+   ENDPOINT: GET /api/patrocinadores
+===================================================== */
+function cargarPatrocinadores() {
+    fetch('/api/patrocinadores')
+        .then(response => response.json())
+        .then(data => {
+            const lista = document.getElementById('listaPatrocinadores');
+            lista.innerHTML = '';
+
+            data.forEach(patrocinador => {
+                const li = document.createElement('li');
+                li.textContent = patrocinador.nombre_patrocinador;
+                lista.appendChild(li);
+            });
+        })
+        .catch(error => {
+            console.error('Error al cargar patrocinadores:', error);
+        });
+}
+
+/* =====================================================
+   FORMULARIO: Enviar registro a la BD
+   ENDPOINT: POST /api/registro
+===================================================== */
+document.getElementById('formRegistro').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+
+    fetch('/api/registro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, correo })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.mensaje);
+        document.getElementById('formRegistro').reset();
+    })
+    .catch(error => {
+        console.error('Error al enviar registro:', error);
+    });
+});
+</script>
+
+</body>
+</html>

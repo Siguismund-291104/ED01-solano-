@@ -1,0 +1,191 @@
+/* Importación de tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* ======== mapa ======== */
+#mapa {
+    height: 500px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    border: 2px solid #5C636D;
+    border-radius: 10px;
+}
+
+input {
+    margin: 5px;
+}
+/* ======== ESTILOS BASE ======== */
+body{
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4;   /* SMOG */
+    color: #5C636D;              /* CLOUD */
+}
+
+/* ======== NAVBAR ======== */
+.navbar{
+    width: 100%;
+    background-color: #5C636D; /* SMOG */
+    padding: 15px 0;
+}
+
+/* MENÚ */
+.nav-links{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+/* LINKS */
+.nav-links a{
+    position: relative;
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: #F4F4F4; /* CLOUD */
+    letter-spacing: 1px;
+    padding: 5px 0;
+}
+
+/* SUBRAYADO ANIMADO */
+.nav-links a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #F4F4F4; /* CLOUD */
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after{
+    width: 100%;
+}
+
+/* ======== HEADER ======== */
+header{
+    background-color: #2E2E2E;  /* SMOG */
+    padding: 20px 10px;
+    text-align: center;
+}
+
+header p{
+    font-size: 22px;
+    color: #F4F4F4;             /* CLOUD */
+}
+
+/* ======== TITULOS ======== */
+h1, h2{
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+    margin: 10px 0;
+}
+
+h1{
+    font-size: 48px;
+    color: #F4F4F4;             /* CLOUD */
+}
+
+h2{
+    font-size: 28px;
+    color: #5C636D;
+}
+
+/* ======== TEXTOS ======== */
+p{
+    font-size: 18px;
+    text-align: justify;
+    color: #5C636D;             /* CLOUD */
+}
+
+/* ======== TABLAS ======== */
+table{
+    width: 70%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #F4F4F4;   /* SMOG */
+    border: 1px solid #5C636D;   /* CLOUD */
+}
+
+td{
+    padding: 15px;
+    border: 1px solid #5C636D;
+    vertical-align: top;
+}
+
+/* ======== IMÁGENES ======== */
+.imagen-dino{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 10px auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* ======== NOMBRE DEL DINOSAURIO ======== */
+.nombre{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #5C636D;              /* CLOUD */
+}
+
+/* ======== FOOTER ======== */
+footer p{
+    text-align: center;
+    padding: 1rem;
+    background-color: #5C636D;  /* SMOG */
+    color: #F4F4F4;             /* CLOUD */
+    margin: 0;
+}
+
+/* ======== UBICACIÓN ACTUAL ======== */
+.ubicacion-actual{
+    width: 70%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #5C636D;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.ubicacion-actual h2{
+    margin-bottom: 10px;
+}
+
+#info-ubicacion{
+    font-size: 18px;
+}
+
+/* ======== DINO ======== */
+.imagen-dino {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.imagen-dino img {
+  width: 1500px;        /* tamaño grande */
+  max-width: 90%;      /* responsive */
+  height: auto;
+}
+
+.video-item {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.video-item:hover {
+    background-color: #eaeaea;
+}
+
